@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warung Ratu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">Warung Ratu</h1>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <!-- Hamburger Icon -->
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="menu">Menu</a></li>
+        <li><a href="#" data-target="about">About</a></li>
+        <li><a href="#" data-target="contact">Contact</a></li>
+      </ul>
+
+      <button class="cart-btn" id="cart-btn">
+        <img src="img/cart-icon.svg" alt="Keranjang" class="cart-icon" />
+        <span id="cart-count">0</span>
+      </button>
+    </header>
+
+    <section id="home" class="section active">
+      <div class="home-slider">
+        <div class="slider">
+          <div class="slide active">
+            <img src="img/menu1.png" alt="Slide 1" />
+          </div>
+          <div class="slide">
+            <img src="img/menu2.png" alt="Slide 2" />
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <h2>Menu Favorit</h2>
+      <div class="menu-items">
+        <div class="menu-item" data-name="Ayam Bakar" data-price="18000">
+          <img src="img/ayam_bakar.jpeg" alt="Ayam Bakar" />
+          <h3>Ayam Bakar</h3>
+          <p>Rp 18.000</p>
+          <button class="add-to-cart">Tambah ke Keranjang</button>
+        </div>
+        <div class="menu-item" data-name="Nasi Goreng" data-price="13000">
+          <img src="img/nasi_goreng.jpg" alt="Nasi Goreng" />
+          <h3>Nasi Goreng</h3>
+          <p>Rp 13.000</p>
+          <button class="add-to-cart">Tambah ke Keranjang</button>
+        </div>
+        <div class="menu-item" data-name="Mie Ayam" data-price="15000">
+          <img src="img/mie_ayam.jpg" alt="Mie Ayam" />
+          <h3>Mie Ayam</h3>
+          <p>Rp 15.000</p>
+          <button class="add-to-cart">Tambah ke Keranjang</button>
+        </div>
+        <div class="menu-item" data-name="Nasi Sop" data-price="10000">
+          <img src="img/nasi_sop.jpg" alt="Nasi Sop" />
+          <h3>Nasi Sop</h3>
+          <p>Rp 10.000</p>
+          <button class="add-to-cart">Tambah ke Keranjang</button>
+        </div>
+        <div class="menu-item" data-name="Nila Goreng" data-price="11000">
+          <img src="img/nasi_sop.jpg" alt="Nila Goreng" />
+          <h3>Nila Goreng</h3>
+          <p>Rp 11.000</p>
+          <button class="add-to-cart">Tambah ke Keranjang</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <h2>Tentang Kami</h2>
+      <p>
+        FoodieExpress memberikan layanan pemesanan makanan cepat dengan makanan
+        terbaik untuk Anda.
+      </p>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2>Kontak Kami</h2>
+      <p>Email: support@foodieexpress.com | Telepon: +62 812 3456 7890</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>About Us</h3>
+          <p>
+            FoodieExpress is your go-to platform for delicious meals delivered
+            right to your door. We pride ourselves on quality and customer
+            satisfaction.
+          </p>
+        </div>
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>Email: support@foodieexpress.com</p>
+          <p>Phone: +1 234 567 890</p>
+        </div>
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+      </div>
+      <p>&copy; 2024 WarungRatu. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal Keranjang -->
+    <div id="cart-modal" class="cart-modal hidden">
+      <h2>Keranjang Belanja</h2>
+      <ul id="cart-items"></ul>
+      <p>Total: Rp <span id="cart-total">0</span></p>
+      <button id="checkout-btn" class="btn" onclick="checkout()">
+        Checkout
+      </button>
+      <button id="close-cart" class="btn" onclick="closeCart()">Tutup</button>
+    </div>
+  </body>
+</html>

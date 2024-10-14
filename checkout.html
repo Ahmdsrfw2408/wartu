@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Checkout</h1>
+
+    <h2>Keranjang Belanja</h2>
+    <ul>
+      @foreach ($cart as $name => $item)
+      <li>{{ $name }} - Rp {{ $item['price'] }} x {{ $item['quantity'] }}</li>
+      @endforeach
+    </ul>
+
+    <form action="/payment" method="POST">
+      @csrf
+      <div>
+        <label>Nama:</label>
+        <input type="text" name="name" required />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email" required />
+      </div>
+      <div>
+        <label>No. HP:</label>
+        <input type="text" name="phone" required />
+      </div>
+      <div>
+        <label>Metode Pembayaran:</label>
+        <select name="payment_method" required>
+          <option value="bank_transfer">Transfer Bank</option>
+          <option value="credit_card">Kartu Kredit</option>
+          <option value="ewallet">E-Wallet</option>
+        </select>
+      </div>
+      <button type="submit">Konfirmasi Pembayaran</button>
+    </form>
+  </body>
+</html>

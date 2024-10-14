@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #ff5722; /* Oranye */
+    --secondary-color: #333;
+    --text-color: #fff;
+    --bg-color: #f4f4f4;
+    --card-bg-color: #c0c0c0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-color: rgba(255, 87, 34, 0.8);
+}
+
+.payment-container {
+    background-color: var(--card-bg-color);
+    margin: 80px auto;
+    padding: 40px 30px;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.payment-container h1 {
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.payment-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.payment-container label {
+    display: block;
+    margin: 12px 0 8px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.payment-container input,
+.payment-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px var(--shadow-color);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.payment-container input:focus,
+.payment-container select:focus {
+    border-color: var(--primary-color);
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(255, 87, 34, 0.5);
+}
+
+.payment-container button {
+    background-color: #ff5722; /* Oranye */
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.payment-container button:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.payment-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.payment-container button:active {
+    transform: translateY(0);
+}
+
+/* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #e68a00;
+}
+
+/* Animasi Halus untuk Masuk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 30px 20px;
+        width: 90%;
+    }
+
+    .payment-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .payment-container p {
+        font-size: 1rem;
+    }
+}
